@@ -2,7 +2,7 @@
     "theme_color": "#3498db",
     "background_color": "#3498db",
     "display": "standalone",
-    "scope": "/pwa-twittor",
+    "scope": "/",
     "start_url": "index.html",
     "name": "Twittor para Heroes",
     "short_name": "Twittor",
