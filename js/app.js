@@ -5,7 +5,7 @@ if (navigator.serviceWorker) {
     if (url.includes('localhost')) {
         swRegisterPromise = navigator.serviceWorker.register('/sw.js', { scope: '/' });
     } else {
-        swRegisterPromise = navigator.serviceWorker.register('/pwa-twittor/sw.js', { scope: '/pwa-twittor' });
+        swRegisterPromise = navigator.serviceWorker.register('/pwa-twittor/sw.js', { scope: '/pwa-twittor/' });
     }
     swRegisterPromise
         .then(registration => console.log('Service worker registered successfully'))
