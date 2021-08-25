@@ -1,9 +1,11 @@
 {
-    "short_name": "Twittor",
-    "name": "Twittor para Heroes",
-    "start_url": "index.html",
-    "background_color": "#3498db",
     "theme_color": "#3498db",
+    "background_color": "#3498db",
+    "display": "standalone",
+    "scope": "/pwa-twittor",
+    "start_url": "index.html",
+    "name": "Twittor para Heroes",
+    "short_name": "Twittor",
     "icons": [
         {
             "src": "img/icons/icon-72x72.png",
@@ -46,7 +48,4 @@
             "sizes": "512x512"
         }
     ],
-    "display": "standalone",
-    "orientation": "portrait",
-    "scope": "/pwa-twittor"
-  }
+}
