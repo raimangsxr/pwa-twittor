@@ -2,7 +2,11 @@ var swRegisterPromise;
 var url = window.location.href;
 
 if (navigator.serviceWorker) {
-    swRegisterPromise = navigator.serviceWorker.register('/sw.js', { scope: '/' });
+    if (url.includes('localhost')) {
+        swRegisterPromise = navigator.serviceWorker.register('/sw.js', { scope: '/' });
+    } else {
+        swRegisterPromise = navigator.serviceWorker.register('/pwa-twittor/sw.js', { scope: '/pwa-twittor/' });
+    }
     swRegisterPromise
         .then(registration => console.log('Service worker registered successfully'))
         .catch(error => console.error('Error during service worker registration:', error));
