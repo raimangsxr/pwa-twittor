@@ -1,12 +1,16 @@
+var swRegisterPromise;
 var url = window.location.href;
-var swLocation = '/pwa-twittor/sw.js';
 
 if (navigator.serviceWorker) {
     if (url.includes('localhost')) {
-        swLocation = '/sw.js';
+        swRegisterPromise = navigator.serviceWorker.register('/sw.js', { scope: '/' });
+    } else {
+        swRegisterPromise = navigator.serviceWorker.register('/pwa-twittor/sw.js', { scope: '/pwa-twittor' });
     }
+    swRegisterPromise
+        .then(registration => console.log('Service worker registered successfully'))
+        .catch(error => console.error('Error during service worker registration:', error));
 
-    navigator.serviceWorker.register(swLocation);
 }
 
 // Referencias de jQuery
